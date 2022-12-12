@@ -10,9 +10,15 @@ class Transaction
     return Time.now.strftime('%m/%d/%Y')
   end
 
-  def deposit(ammount)
+  def deposit(amount)
     transaction = []
-    transaction << get_date << ammount
+    transaction << get_date << amount
+    @account << transaction
+  end
+
+  def withdraw(amount)
+    transaction = []
+    transaction << get_date << - amount
     @account << transaction
   end
 

@@ -13,10 +13,18 @@ describe 'Transaction class' do
   end
 
   context 'deposit method' do
-    it 'handles a deposit to the account' do
+    it 'handles a deposit transaction' do
       account = Transaction.new([])
       result = account.deposit(200)
       expect(result[0][1]).to eq 200
+    end
+  end
+
+  context 'withdraw method' do
+    it 'handles a withdraw transaction' do
+      account = Transaction.new([])
+      result = account.withdraw(200)
+      expect(result[0][1]).to eq -200
     end
   end
 
