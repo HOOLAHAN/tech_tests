@@ -3,7 +3,6 @@
 class Account
 
   def initialize
-    @balance = 0
     @account = []
   end
 
@@ -16,7 +15,11 @@ class Account
   end
 
   def balance
-    return @balance
+    account_balance = 0
+    @account.each do |item|
+      account_balance = account_balance + item[1]
+    end
+    return account_balance
   end
 
 end
