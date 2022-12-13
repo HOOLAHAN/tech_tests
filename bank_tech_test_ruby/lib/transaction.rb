@@ -11,7 +11,7 @@ class Transaction
   end
 
   def check_amount_valid(amount)
-    fail "amount must be a positive integer" unless amount > 0 && amount.to_f % 2 == 0
+    fail "amount must be a positive integer" unless (amount === amount.to_i) && amount > 0 && amount.to_f % 2 == 0
   end
 
   def deposit(amount)
