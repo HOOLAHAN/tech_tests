@@ -2,7 +2,8 @@
 
 class Statement
 
-  def initialize
+  def initialize(terminal)
+    @terminal = terminal
     @statement = []
   end
 
@@ -29,6 +30,12 @@ class Statement
       @statement << add_separators
     end
     return @statement
+  end
+
+  def print_statement
+    @statement.each do |item|
+      @terminal.puts item
+    end
   end
 
 end

@@ -45,6 +45,7 @@ describe 'transaction - account class integration' do
 
   context 'when transactions have been made on the account and the create_statement method is called' do
     it 'it preapres a statement array showing the transactions and account balance formatted as required' do
+      terminal = double :terminal
       test_account = Account.new
 
       test_transaction_1 = Transaction.new.deposit(200)
@@ -57,7 +58,7 @@ describe 'transaction - account class integration' do
       test_account.add_transaction(test_transaction_3)
 
       prepared_account = test_account.add_balance
-      test_statement = Statement.new.create_statement(prepared_account)
+      test_statement = Statement.new(terminal).create_statement(prepared_account)
 
       date_today = Time.now.strftime('%d/%m/%Y')
       expect(test_statement).to eq ["date || credit || debit || balance", "#{date_today} || || -100 || 400", "#{date_today} || 300 || || 500", "#{date_today} || 200 || || 200"]
