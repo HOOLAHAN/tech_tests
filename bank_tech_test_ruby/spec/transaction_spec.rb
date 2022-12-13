@@ -18,6 +18,17 @@ describe 'Transaction class' do
       result = account.deposit(200)
       expect(result[0][1]).to eq 200
     end
+
+    it 'fails a non positive argument for amount' do
+      account = Transaction.new([])
+      expect { account.deposit(-200) }.to raise_error "amount must be a positive integer"
+    end
+
+    it 'fails a non integer argument for amount' do
+      account = Transaction.new([])
+      expect { account.deposit(3.5) }.to raise_error "amount must be a positive integer"
+    end
+
   end
 
   context 'withdraw method' do
@@ -26,6 +37,17 @@ describe 'Transaction class' do
       result = account.withdraw(200)
       expect(result[0][1]).to eq -200
     end
+
+    it 'fails a non positive argument for amount' do
+      account = Transaction.new([])
+      expect { account.withdraw(-200) }.to raise_error "amount must be a positive integer"
+    end
+
+    it 'fails a non integer argument for amount' do
+      account = Transaction.new([])
+      expect { account.withdraw(3.5) }.to raise_error "amount must be a positive integer"
+    end
+
   end
 
 end
