@@ -7,6 +7,10 @@ class Account
     @account = []
   end
 
+  def add_transaction(transaction)
+    @account << transaction
+  end
+
   def account
     return @account
   end

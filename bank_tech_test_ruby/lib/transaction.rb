@@ -2,12 +2,12 @@
 
 class Transaction
 
-  def initialize(account)
-    @account = account
+  def initialize
+    @transaction = []
   end
 
   def get_date
-    return Time.now.strftime('%m/%d/%Y')
+    return Time.now.strftime('%d/%m/%Y')
   end
 
   def check_amount_valid(amount)
@@ -16,16 +16,12 @@ class Transaction
 
   def deposit(amount)
     check_amount_valid(amount)
-    transaction = []
-    transaction << get_date << amount
-    @account << transaction
+    @transaction << get_date << amount
   end
 
   def withdraw(amount)
     check_amount_valid(amount)
-    transaction = []
-    transaction << get_date << - amount
-    @account << transaction
+    @transaction << get_date << - amount
   end
 
 end
