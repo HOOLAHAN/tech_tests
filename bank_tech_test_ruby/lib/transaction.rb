@@ -15,11 +15,13 @@ class Transaction
   end
 
   def deposit(amount)
+    @transaction = []
     check_amount_valid(amount)
     @transaction << get_date << amount
   end
 
   def withdraw(amount)
+    @transaction = []
     check_amount_valid(amount)
     @transaction << get_date << - amount
   end
