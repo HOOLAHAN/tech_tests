@@ -56,6 +56,34 @@ require_relative './lib/account'
 require_relative './lib/statement'
 ````
 
+*Initialize the classes*
+
+````
+account = Account.new
+transaction = Transaction.new
+statement = Statement.new(Kernel)
+`````
+
+*Make transactions*
+
+````
+account.add_transaction(transaction.deposit(200))
+account.add_transaction(transaction.deposit(400))
+account.add_transaction(transaction.withdraw(100))
+account.add_transaction(transaction.deposit(1000))
+account.add_transaction(transaction.deposit(200))
+account.add_transaction(transaction.withdraw(200))
+````
+
+*Print the statement*
+
+````
+update_account = account.add_balance
+statement.create_statement(update_account)
+statement.print_statement
+````
+
+
 An example of how to use the program is shown in the app.rb. 
 
 ## My solution
@@ -64,6 +92,6 @@ My approach to this problem was first to consider the class structure and produc
 
 ![alt text](https://github.com/HOOLAHAN/tech_tests/blob/main/bank_tech_test_ruby/class_diagram.png)
 
-As displayed above, the program has three classes - Transaction, Account, Statement which deal with three key core behaviours, i.e. recording a transaction, adding to the account, peparing/printing a statement. 
+As displayed above, the program has three classes - Transaction, Account, Statement which deal with three key core behaviours, i.e. recording a transaction, adding to the account, preparing/printing a statement. 
 
 While preparing the solution I followed the TDD process as closely as possible. Preparing tests for the simplest cases before writing the code to make them go from red to green, then commiting before writing the next test and repeating. 
