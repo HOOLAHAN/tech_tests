@@ -61,7 +61,7 @@ describe 'transaction - account class integration' do
       test_statement = Statement.new(terminal).create_statement(prepared_account)
 
       date_today = Time.now.strftime('%d/%m/%Y')
-      expect(test_statement).to eq ["date || credit || debit || balance", "#{date_today} || || -100 || 400", "#{date_today} || 300 || || 500", "#{date_today} || 200 || || 200"]
+      expect(test_statement).to eq ["date || credit || debit || balance", "#{date_today} || || -100.00 || 400.00", "#{date_today} || 300.00 || || 500.00", "#{date_today} || 200.00 || || 200.00"]
     end
   end
 
