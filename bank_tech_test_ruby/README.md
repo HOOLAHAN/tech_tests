@@ -1,12 +1,6 @@
 # Bank tech test
 
-Today, you'll practice doing a tech test.
-
-For most tech tests, you'll essentially have unlimited time.  This practice session is about producing the best code you can when there is a minimal time pressure.
-
-You'll get to practice your OO design and TDD skills.
-
-You'll work alone, and you'll also review your own code so you can practice reflecting on and improving your own work.
+This repository contains a program I have written to practise writing quality code and following the TDD process when approaching a tech test. The requirements of the problem are outlined below with some added information on how to download and run the program.
 
 ## Specification
 
@@ -32,6 +26,42 @@ date || credit || debit || balance
 10/01/2023 || 1000.00 || || 1000.00
 ```
 
-## Self-assessment
+## SET UP
 
-Once you have completed the challenge and feel happy with your solution, here's a form to help you reflect on the quality of your code: https://docs.google.com/forms/d/1Q-NnqVObbGLDHxlvbUfeAC7yBCf3eCjTmz6GOqC9Aeo/edit
+*Begin by creating a local copy of all files in the repository then open up a terminal and navigate to the correct repository*
+
+````cd bank_tech_test_ruby````
+
+*Then in the terminal install the dependencies:*
+
+````bundle install````
+
+*To run the tests:*
+
+````rspec````
+
+*To run the program:*
+
+````ruby app.rb````
+
+*To interact with the program:*
+
+````irb````
+
+*Then load the files into the REPL*
+
+````require_relative './lib/transaction'
+require_relative './lib/account'
+require_relative './lib/statement'````
+
+An example of how to use the program is shown in the app.rb. 
+
+## My solution
+
+My approach to this problem was first to consider the class structure and produce a diagram which would encapsulate the overall behaviour. See below sketch made using Drawio:
+
+![alt text](insert image URL)
+
+As displayed above, the program has three classes - Transaction, Account, Statement which deal with three key core behaviours, i.e. recording a transaction, adding to the account, peparing/printing a statement. 
+
+While preparing the solution I followed the TDD process as closely as possible. Preparing tests for the simplest cases before writing the code to make them go from red to green, then commiting before writing the next test and repeating. 
