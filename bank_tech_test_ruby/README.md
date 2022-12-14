@@ -56,7 +56,7 @@ require_relative './lib/account'
 require_relative './lib/statement'
 ````
 
-*Initialize the classes*
+*Instantiate the classes*
 
 ````
 account = Account.new
