@@ -8,26 +8,13 @@ account = Account.new
 transaction = Transaction.new
 statement = Statement.new(Kernel)
 
-transaction_1 = transaction.deposit(200)
-account.add_transaction(transaction_1)
-
-transaction_2 = transaction.deposit(400)
-account.add_transaction(transaction_2)
-
-transaction_3 = transaction.withdraw(100)
-account.add_transaction(transaction_3)
-
-transaction_4 = transaction.deposit(1000)
-account.add_transaction(transaction_4)
-
-transaction_5 = transaction.deposit(200)
-account.add_transaction(transaction_5)
-
-transaction_6 = transaction.withdraw(200)
-account.add_transaction(transaction_6)
+account.add_transaction(transaction.deposit(200))
+account.add_transaction(transaction.deposit(400))
+account.add_transaction(transaction.withdraw(100))
+account.add_transaction(transaction.deposit(1000))
+account.add_transaction(transaction.deposit(200))
+account.add_transaction(transaction.withdraw(200))
 
 update_account = account.add_balance
-
 statement.create_statement(update_account)
-
 statement.print_statement
