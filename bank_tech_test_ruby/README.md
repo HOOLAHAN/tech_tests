@@ -82,9 +82,11 @@ update_account = account.add_balance
 statement.create_statement(update_account)
 statement.print_statement
 ````
+This screenshot shows an example of running the program a REPL:
 
+![alt text](https://github.com/HOOLAHAN/tech_tests/blob/main/bank_tech_test_ruby/REPL_example_run.png)
 
-An example of how to use the program is shown in the app.rb. 
+An example of how to use the program is also shown in the app.rb. 
 
 ## My solution
 
