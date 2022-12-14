@@ -50,9 +50,11 @@ date || credit || debit || balance
 
 *Then load the files into the REPL*
 
-````require_relative './lib/transaction'
+````
+require_relative './lib/transaction'
 require_relative './lib/account'
-require_relative './lib/statement'````
+require_relative './lib/statement'
+````
 
 An example of how to use the program is shown in the app.rb. 
 
@@ -60,7 +62,7 @@ An example of how to use the program is shown in the app.rb.
 
 My approach to this problem was first to consider the class structure and produce a diagram which would encapsulate the overall behaviour. See below sketch made using Drawio:
 
-![alt text](insert image URL)
+![alt text](https://github.com/HOOLAHAN/tech_tests/blob/main/bank_tech_test_ruby/class_diagram.png)
 
 As displayed above, the program has three classes - Transaction, Account, Statement which deal with three key core behaviours, i.e. recording a transaction, adding to the account, peparing/printing a statement. 
 
