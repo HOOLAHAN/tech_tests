@@ -39,7 +39,8 @@ class Statement
     return @statement
   end
 
-  def print_statement
+  def print_statement(account)
+    create_statement(account)
     @statement.each do |item|
       @terminal.puts item
     end

@@ -9,6 +9,7 @@ class Account
 
   def add_transaction(transaction)
     @account << transaction
+    add_balance
   end
 
   def show_account
@@ -17,8 +18,10 @@ class Account
 
   def add_balance
     @account.each do |item|
-      @account_balance = @account_balance + item[1]
-      item << @account_balance
+      if item.length < 3
+        @account_balance = @account_balance + item[1]
+        item << @account_balance
+      end
     end
   end
 
