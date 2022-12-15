@@ -4,7 +4,6 @@ class Statement
 
   def initialize(terminal)
     @terminal = terminal
-    @statement = []
   end
 
   def get_header
@@ -29,6 +28,7 @@ class Statement
   end
 
   def create_statement(account)
+    @statement = []
     format_account(account)
     get_header
     account.reverse!
@@ -39,11 +39,25 @@ class Statement
     return @statement
   end
 
-  def print_statement(account)
-    create_statement(account)
+  def print_statement(account) # calls the above methods and prints the account statement
+    temp_account = account
+    create_statement(temp_account)
     @statement.each do |item|
       @terminal.puts item
     end
+    clean_up_account(account)
+  end
+
+  def clean_up_account(account) # re-format account array to be able to take further transactions
+    account.each do |item|
+      item.map! { |element| element.gsub('||', '')}
+      item.map! { |element| element.gsub(' ', '')}
+    end
+    account.reverse!
+    account.each { |item|
+      item[1] = item[1].to_i
+      item[2] = item[2].to_i 
+    }
   end
 
 end

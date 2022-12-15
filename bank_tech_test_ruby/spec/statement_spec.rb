@@ -21,4 +21,11 @@ describe 'Statement class' do
     statement_test.print_statement(account_double)
   end
 
+  it 'resets the account array after printing the statement so that further transactions can be added' do
+    terminal = double :terminal
+    formatted_account_double = [["11/12/2022", "200.00", "200.00"], ["10/12/2022", "300.00", "500.00"], ["09/12/2022", "-100.00", "400.00"]]
+    result = Statement.new(terminal).clean_up_account(formatted_account_double)
+    expect(result).to eq [["09/12/2022", -100, 400], ["10/12/2022", 300, 500], ["11/12/2022", 200, 200]]
+  end
+
 end
