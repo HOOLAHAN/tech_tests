@@ -64,4 +64,40 @@ describe 'transaction - account class integration' do
     end
   end
 
+  context 'when transactions have been made and the statement has been generated' do
+    it 'allows further transactions to be made' do
+      terminal = double :terminal
+      test_account = Account.new
+      test_transaction = Transaction.new
+      test_statement = Statement.new(terminal)
+      date_today = Time.now.strftime('%d/%m/%Y')
+
+      # initial transactions
+      test_account.add_transaction(test_transaction.deposit(200))
+      test_account.add_transaction(test_transaction.deposit(400))
+
+      # first statement
+      expect(terminal).to receive(:puts).with("date || credit || debit || balance").ordered
+      expect(terminal).to receive(:puts).with("#{date_today} || 400.00 || || 600.00").ordered
+      expect(terminal).to receive(:puts).with("#{date_today} || 200.00 || || 200.00").ordered
+      
+      prepared_account = test_account.add_balance
+      test_statement.print_statement(prepared_account)
+
+      # further transactions
+      test_account.add_transaction(test_transaction.withdraw(100))
+      test_account.add_transaction(test_transaction.deposit(800))
+      
+      # updated statement
+      expect(terminal).to receive(:puts).with("date || credit || debit || balance").ordered
+      expect(terminal).to receive(:puts).with("#{date_today} || 800.00 || || 1300.00").ordered
+      expect(terminal).to receive(:puts).with("#{date_today} || || -100.00 || 500.00").ordered
+      expect(terminal).to receive(:puts).with("#{date_today} || 400.00 || || 600.00").ordered
+      expect(terminal).to receive(:puts).with("#{date_today} || 200.00 || || 200.00").ordered
+
+      prepared_account_2 = test_account.add_balance
+      result_2 = test_statement.print_statement(prepared_account_2)
+    end
+  end
+
 end
