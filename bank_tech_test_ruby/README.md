@@ -52,7 +52,11 @@ date || credit || debit || balance
 
 ````
 require_relative './lib/transaction'
+````
+````
 require_relative './lib/account'
+````
+````
 require_relative './lib/statement'
 ````
 
@@ -60,7 +64,11 @@ require_relative './lib/statement'
 
 ````
 account = Account.new
+````
+````
 transaction = Transaction.new
+````
+````
 statement = Statement.new(Kernel)
 `````
 
@@ -79,8 +87,7 @@ account.add_transaction(transaction.withdraw(200))
 
 ````
 update_account = account.add_balance
-statement.create_statement(update_account)
-statement.print_statement
+statement.print_statement(account.show_account)
 ````
 This screenshot shows an example of running the program a REPL:
 
