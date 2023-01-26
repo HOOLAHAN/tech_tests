@@ -86,7 +86,6 @@ account.add_transaction(transaction.withdraw(200))
 *Print the statement*
 
 ````
-update_account = account.add_balance
 statement.print_statement(account.show_account)
 ````
 This screenshot shows an example of running the program a REPL:
