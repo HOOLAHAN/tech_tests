@@ -5,6 +5,15 @@ class Transaction {
     this.date = date;
   }
 
+  getDate() {
+    return new Date().toLocaleDateString()
+  }
+
+  withdraw(amount) {
+    this.date = this.getDate()
+    this.transaction = -amount;
+  }
+  
 }
 
 module.exports = Transaction;
