@@ -15,4 +15,12 @@ describe('Transaction', () => {
     )
   })
 
+  it('deposit function creates a positive amount transaction', () => {
+    let testTransaction = new Transaction;
+    testTransaction.deposit(500)
+    expect(testTransaction).toEqual(
+      expect.objectContaining({ transaction: 500 })
+    )
+  })
+
 })

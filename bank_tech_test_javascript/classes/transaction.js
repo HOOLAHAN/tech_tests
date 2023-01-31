@@ -13,6 +13,11 @@ class Transaction {
     this.date = this.getDate()
     this.transaction = -amount;
   }
+
+  deposit(amount) {
+    this.date = this.getDate()
+    this.transaction = amount;
+  }
   
 }
 
