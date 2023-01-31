@@ -6,4 +6,10 @@ describe('Account', () => {
     testAccount = new Account;
     expect(testAccount.account).toEqual([])
   })
+
+  it('getAccount function returns the account array', () => {
+    testAccount = new Account;
+    expect(testAccount.getAccount()).toEqual([])
+  })
+
 })

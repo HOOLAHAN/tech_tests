@@ -4,6 +4,10 @@ class Account {
     this.account = [];
   }
 
+  getAccount() {
+    return this.account
+  }
+
 }
 
 module.exports = Account;
