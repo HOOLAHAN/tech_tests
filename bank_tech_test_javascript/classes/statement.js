@@ -12,10 +12,6 @@ class Statement {
     return account.account.reverse()
   }
 
-  formatDecimalPlaces(orderedAccount) {
-    return orderedAccount.forEach(element => element.transaction.toFixed(2))
-  }
-
   prepareStatement(accountObject) {
     let orderedTransactions = this.orderTransactions(accountObject)
     let printArray = []
