@@ -22,9 +22,9 @@ class Statement {
 
     orderedTransactions.forEach(x => { 
       if (x.transaction > 0) { 
-        printArray.push(`${x.date} || ${x.transaction} || || ${x.balance}\n`)
+        printArray.push(`${x.date} || ${x.transaction}.00 || || ${x.balance}.00\n`)
       } else {
-        printArray.push(`${x.date} || || ${x.transaction} || ${x.balance}\n`)
+        printArray.push(`${x.date} || || ${x.transaction}.00 || ${x.balance}.00\n`)
       }
     })
     return printArray;    

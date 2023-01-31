@@ -39,7 +39,7 @@ describe('Statement', () => {
     let testStatement = new Statement;
 
     expect(testStatement.printStatement(accountDouble)).toEqual(
-      "date || credit || debit || balance\n31/01/2023 || || -700 || 400\n30/01/2023 || 600 || || 1100\n29/01/2023 || 500 || || 500\n"
+      "date || credit || debit || balance\n31/01/2023 || || -700.00 || 400.00\n30/01/2023 || 600.00 || || 1100.00\n29/01/2023 || 500.00 || || 500.00\n"
     )
   
   })
