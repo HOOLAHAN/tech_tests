@@ -6,11 +6,11 @@ describe('Integration', () => {
     let testAccount = new Account;
     let testTransaction = new Transaction;
 
-    testTransaction.withdraw(500)
+    testTransaction.deposit(500)
     testAccount.addTransaction(testTransaction);
 
     expect(testAccount.account[0]).toEqual(
-      expect.objectContaining({ transaction: -500 })
+      expect.objectContaining({ transaction: 500 })
     )
   })
 
@@ -32,4 +32,17 @@ describe('Integration', () => {
       expect.objectContaining( { transaction: -500, balance: 100 } )
     )
   })
+
+  it('throws error if the balance is less than the withdraw amount', () => {
+    let testAccount = new Account;
+    let testTransaction1 = new Transaction;
+    let testTransaction2 = new Transaction;
+
+    testTransaction1.deposit(600)
+    testAccount.addTransaction(testTransaction1);
+
+    testTransaction2.withdraw(800)
+    expect(() => {testAccount.addTransaction(testTransaction2)}).toThrow('Insufficient funds.')
+  })
+
 })
