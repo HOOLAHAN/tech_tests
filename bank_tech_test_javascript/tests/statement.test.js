@@ -17,14 +17,31 @@ describe('Statement', () => {
       balance: 400
     }
 
-    let orderedAccount = new Statement;
-    test = orderedAccount.orderTransactions(accountDouble)
+    let testStatement = new Statement;
 
-    expect(test).toEqual([
+    expect(testStatement.orderTransactions(accountDouble)).toEqual([
       { transaction: -700, date: '31/01/2023', balance: 400 },
       { transaction: 600, date: '30/01/2023', balance: 1100 },
       { transaction: 500, date: '29/01/2023', balance: 500 }
     ])
+  })
+
+  it('prints the statement', () => {
+    accountDouble = {
+      account: [
+        { transaction: 500, date: '29/01/2023', balance: 500 },
+        { transaction: 600, date: '30/01/2023', balance: 1100 },
+        { transaction: -700, date: '31/01/2023', balance: 400 }
+      ],
+      balance: 400
+    }
+
+    let testStatement = new Statement;
+
+    expect(testStatement.printStatement(accountDouble)).toEqual(
+      "date || credit || debit || balance\n31/01/2023 || || -700 || 400\n30/01/2023 || 600 || || 1100\n29/01/2023 || 500 || || 500\n"
+    )
+  
   })
 
 })

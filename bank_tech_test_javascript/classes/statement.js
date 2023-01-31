@@ -5,11 +5,37 @@ class Statement {
   }
 
   getHeader() {
-    return "date || credit || debit || balance"
+    return "date || credit || debit || balance\n"
   }
 
   orderTransactions(account) {
     return account.account.reverse()
+  }
+
+  formatDecimalPlaces(orderedAccount) {
+    return orderedAccount.forEach(element => element.transaction.toFixed(2))
+  }
+
+  prepareStatement(accountObject) {
+    let orderedTransactions = this.orderTransactions(accountObject)
+    let printArray = []
+
+    orderedTransactions.forEach(x => { 
+      if (x.transaction > 0) { 
+        printArray.push(`${x.date} || ${x.transaction} || || ${x.balance}\n`)
+      } else {
+        printArray.push(`${x.date} || || ${x.transaction} || ${x.balance}\n`)
+      }
+    })
+    return printArray;    
+  }
+  
+  printStatement(accountObject) {
+    let printArray = this.prepareStatement(accountObject)
+    printArray.unshift(this.getHeader())
+    let printReady = printArray.join("")
+    console.log(printReady)
+    return printReady
   }
 
 }
