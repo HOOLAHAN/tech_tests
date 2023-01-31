@@ -23,4 +23,10 @@ describe('Transaction', () => {
     )
   })
 
+  it('throws error if the transaction is not an integer', () => {
+    let testTransaction = new Transaction;
+    expect(() => { testTransaction.deposit("One Hundred") }).toThrow('Invalid input. Transaction amount must be an integer.')
+    expect(() => { testTransaction.deposit(500.50) }).toThrow('Invalid input. Transaction amount must be an integer.')
+  })
+
 })

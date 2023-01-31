@@ -10,13 +10,21 @@ class Transaction {
   }
 
   withdraw(amount) {
+    this.validateArgument(amount)
     this.date = this.getDate()
     this.transaction = -amount;
   }
 
   deposit(amount) {
+    this.validateArgument(amount)
     this.date = this.getDate()
     this.transaction = amount;
+  }
+
+  validateArgument(amount) {
+    if (isNaN(amount) === true || amount % 1 !== 0 ) {
+      throw 'Invalid input. Transaction amount must be an integer.'
+    }
   }
   
 }
