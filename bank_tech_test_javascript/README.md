@@ -88,7 +88,7 @@ statement.printStatement(account)
 ````
 This screenshot shows an example of running the program a REPL:
 
-![alt text](https://github.com/HOOLAHAN/tech_tests/blob/main/bank_tech_test_javascript/REPL_runthrough.png)
+![alt text](https://github.com/HOOLAHAN/tech_tests/blob/main/bank_tech_test_javascript/REPL_%20runthrough.png)
 
 ## My solution
 
