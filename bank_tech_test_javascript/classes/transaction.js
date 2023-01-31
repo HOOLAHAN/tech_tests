@@ -23,6 +23,7 @@ class Transaction {
 
   validateArgument(amount) {
     if (isNaN(amount) === true || amount % 1 !== 0 ) {
+      console.log("Invalid input. Transaction amount must be an integer.")
       throw 'Invalid input. Transaction amount must be an integer.'
     }
   }
