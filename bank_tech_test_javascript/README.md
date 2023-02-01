@@ -47,9 +47,9 @@ date || credit || debit || balance
 *Then load the files into the REPL*
 
 ````
-const Account = require('./classes/account')
-const Transaction = require('./classes/transaction') 
-const Statement = require('./classes/statement')
+const Account = require('./src/account')
+const Transaction = require('./src/transaction') 
+const Statement = require('./src/statement')
 ````
 
 *Instantiate the classes*
@@ -88,7 +88,7 @@ statement.printStatement(account)
 ````
 This screenshot shows an example of running the program a REPL:
 
-![alt text](https://github.com/HOOLAHAN/tech_tests/blob/main/bank_tech_test_javascript/REPL_%20runthrough.png)
+![alt text](https://github.com/HOOLAHAN/tech_tests/blob/main/bank_tech_test_javascript/REPL_runthrough.png)
 
 ## My solution
 

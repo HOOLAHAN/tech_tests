@@ -1,4 +1,4 @@
-const Transaction = require('../classes/transaction')
+const Transaction = require('../src/transaction')
 
 describe('Transaction', () => {
   

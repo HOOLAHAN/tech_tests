@@ -1,4 +1,4 @@
-const Statement = require('../classes/statement')
+const Statement = require('../src/statement')
 
 describe('Statement', () => {
 

@@ -1,5 +1,5 @@
-const Transaction = require('../classes/transaction')
-const Account = require('../classes/account')
+const Transaction = require('../src/transaction')
+const Account = require('../src/account')
 
 describe('Integration', () => {
   it('adds transactions to the account', () => {
