@@ -25,8 +25,8 @@ date || credit || debit || balance
 13/01/2023 || 2000.00 || || 3000.00
 10/01/2023 || 1000.00 || || 1000.00
 ```
-
-## SET UP
+## My Solution
+### How to Install
 
 *Begin by creating a local copy of all files in the repository then open up a terminal and navigate to the correct repository*
 
@@ -94,7 +94,7 @@ This screenshot shows an example of running the program a REPL:
 
 An example of how to use the program is also shown in the app.rb. 
 
-## My solution
+## My approach
 
 My approach to this problem was first to consider the class structure and produce a diagram which would encapsulate the overall behaviour. See below sketch made using Drawio:
 
