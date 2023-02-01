@@ -25,8 +25,9 @@ date || credit || debit || balance
 13/01/2023 || 2000.00 || || 3000.00
 10/01/2023 || 1000.00 || || 1000.00
 ```
+## My Solution
 
-## SET UP
+### How to install
 
 *Begin by creating a local copy of all files in the repository then open up a terminal and navigate to the correct repository*
 
@@ -90,7 +91,7 @@ This screenshot shows an example of running the program a REPL:
 
 ![alt text](https://github.com/HOOLAHAN/tech_tests/blob/main/bank_tech_test_javascript/REPL_runthrough.png)
 
-## My solution
+## My approach
 
 My approach to this problem was first to consider the class structure and produce a diagram which would encapsulate the overall behaviour. See below sketch made using Drawio:
 
